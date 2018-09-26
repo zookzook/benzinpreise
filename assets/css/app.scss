@@ -23,3 +23,39 @@ body {
 main, .main  {
   background-color: white;
 }
+
+.day-chart {
+
+  .line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+  }
+
+  .dot {
+    fill: white;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+  }
+
+  .price-text,
+  .dot-text {
+    font-size: 10px;
+    font-family: Cousine, sans-serif;
+  }
+
+  .price-line {
+    fill: none;
+    stroke: green;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    stroke-width: 1.0;
+  }
+
+  .price-dot {
+    fill: white;
+    stroke: green;
+    stroke-width: 1.5px;
+  }
+
+}

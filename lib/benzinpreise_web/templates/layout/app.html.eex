@@ -6,30 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <title>Hello Benzinpreise!</title>
+    <title><%= PageTitle.page_title(assigns) %></title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
-
   <body>
-    <div class="container">
-      <header class="header">
-        <nav role="navigation">
-          <ul class="nav nav-pills pull-right">
-            <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
-          </ul>
-        </nav>
-        <span class="logo"></span>
-      </header>
+    <%= render BenzinpreiseWeb.LayoutView, "header.html", assigns %>
 
-      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+    <div class="container-fluid main pt-5 pb-5">
+        <div class="container main">
+            <main>
+                <%= unless is_nil(get_flash(@conn, :info)) do %>
+                  <p class="alert alert-success"><%= get_flash(@conn, :info) %></p>
+                <% end %>
+                <%= unless is_nil(get_flash(@conn, :error)) do %>
+                  <p class="alert alert-danger"><%= get_flash(@conn, :error) %></p>
+                <% end %>
+                <%= render @view_module, @view_template, assigns %>
+            </main>
+        </div>
+    </div>
+    <%= render BenzinpreiseWeb.LayoutView, "footer.html", assigns %>
 
-      <main role="main">
-        <%= render @view_module, @view_template, assigns %>
-      </main>
-
-    </div> <!-- /container -->
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    <script>require("js/day").hello()</script>
   </body>
 </html>

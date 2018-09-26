@@ -70,7 +70,8 @@ exports.config = {
         globals: {
             $: 'jquery',
             jQuery: 'jquery',
-            bootstrap: 'bootstrap'
+            bootstrap: 'bootstrap',
+            d3: 'd3'
         }
     }
 };

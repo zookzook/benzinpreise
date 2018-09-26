@@ -20,7 +20,9 @@ defmodule BenzinpreiseWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", BenzinpreiseWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", BenzinpreiseWeb do
+    pipe_through :api
+
+    post "/day", DataController, :day
+  end
 end

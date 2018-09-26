@@ -19,3 +19,13 @@ import "phoenix_html"
 // paths "./socket" or full ones "web/static/js/socket".
 
 // import socket from "./socket"
+
+// import * as day from "./day"
+
+export let App = {
+    run: function(){
+
+        console.log( "Calling" + day );
+        // day.hello();
+    }
+}
